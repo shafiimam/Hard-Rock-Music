@@ -47,9 +47,16 @@
                 <h1 class="text-center">Hard Rock Lyric Search</h1>
                 <div class="search-box my-5">
                     <input id="search-field" type="text" class="form-control" placeholder="Enter your artist song name">
-                    <button onclick="searchSong()" class="btn btn-success search-btn">Search</button>
+                    <button id="search-button" onclick="searchSong()" class="btn btn-success search-btn">Search</button>
                 </div>
             </div>
+            <!-- spinner -->
+            <div class="d-flex justify-content-center">
+                <div id="loading-spinner" class="spinner-border text-primary d-none" role="status">
+                    <span class="visually-hidden"></span>
+                </div>
+            </div>
+
             <!-- Single Lyrics -->
             <div id="song-lyrics" class="single-lyrics text-center">
 
@@ -61,6 +68,12 @@
                 </div>
             </div>
         </main>
+        <div id="not-found" style="display:none">
+            <button onclick="closeCard()" class="close-card">x</button>
+            <i class="fas fa-exclamation-triangle icon"></i>
+            <h3 id="error-message"></h3>
+
+        </div>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
